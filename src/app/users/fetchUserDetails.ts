@@ -10,9 +10,6 @@ export const fetchUserDetails = () =>{
    
     return activatedRoute.params.pipe(
      map((params:Params)=>params['id']),
-     switchMap((id)=>{
-       console.log(id);
-      return userService.getUser(id)
-     }),
+     switchMap((id)=> userService.getUser(id))
    )
    }
