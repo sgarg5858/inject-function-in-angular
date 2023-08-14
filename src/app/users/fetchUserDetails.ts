@@ -3,7 +3,7 @@ import { ActivatedRoute, Params } from "@angular/router";
 import { Subject, map, switchMap, takeUntil } from "rxjs";
 import { UserService } from "./user.service";
 
-export const fetchUserDetails = (destroy$:Subject<void>) =>{
+export const fetchUserDetails = () =>{
   
     const activatedRoute = inject(ActivatedRoute);
     const userService= inject(UserService);
@@ -14,6 +14,5 @@ export const fetchUserDetails = (destroy$:Subject<void>) =>{
        console.log(id);
       return userService.getUser(id)
      }),
-     takeUntil(destroy$)
    )
    }

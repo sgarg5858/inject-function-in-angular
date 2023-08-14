@@ -10,20 +10,13 @@ import { fetchUserDetails } from '../fetchUserDetails';
   templateUrl: './user-detail.component.html',
   styleUrls: ['./user-detail.component.scss']
 })
-export class UserDetailComponent  implements OnDestroy{
+export class UserDetailComponent {
 
   router = inject(Router);
+  user$:Observable<User|undefined>|undefined = fetchUserDetails();
 
-  destroy$ = new Subject<void>();  
-  user$:Observable<User|undefined>|undefined = fetchUserDetails(this.destroy$);
-  
   closePreview()
   {
     this.router.navigate(['users'])
-  }
-
-  ngOnDestroy(): void {
-      this.destroy$.next();
-      this.destroy$.complete();
   }
 }
