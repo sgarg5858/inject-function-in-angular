@@ -1,0 +1,16 @@
+<ng-container *ngIf="users$ |async as users">
+   <div class="container">
+        <div class="left">
+            <app-user 
+            [user]="user"
+            (showDetailForUser)="navigateToDetail($event)"
+            *ngFor="let user of users">
+                
+            </app-user>
+        </div>
+        <div class="right">
+            <router-outlet></router-outlet>
+        </div>
+   </div>
+</ng-container>
+

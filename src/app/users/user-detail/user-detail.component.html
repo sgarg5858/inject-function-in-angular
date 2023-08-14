@@ -1,0 +1,5 @@
+<pre *ngIf="user$ | async as user">
+    hello
+    {{user | json}}
+    <button (click)="closePreview()">close</button>
+</pre>

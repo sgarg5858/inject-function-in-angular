@@ -1,0 +1,12 @@
+.container{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    .left{
+        width: 40%;
+    }
+    .right{
+        width: 60%;
+        background-color: lightgray;
+    }
+}
